@@ -34,3 +34,16 @@ export const deleteToDo = async(req, res) => {
 
     res.json({ message: "Post deleted successfully." });
 }
+
+export const updateCompleted = async (req, res) => {
+    await Todo.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((todo) => {
+        if (!todo) {
+            return res.status(404).send();
+        }
+        res.json({ message: "Post updated successfully." });
+        // console.log(res);
+        console.log("update success")
+    }).catch((error) => {
+        res.status(500).send(error);
+    })
+}
