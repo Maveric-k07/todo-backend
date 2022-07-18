@@ -1,15 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import cors from 'cors';
 import todoRoutes from "./views/routes.js";
+const cors = require('cors');
+
 
 const app = express();
 
-app.use(cors({
-	origin:"https://mytodo-app-frontend.herokuapp.com/",
-	credentials:true
-}));
+app.use(cors());
+app.options('*', cors());
 
 const port = process.env.PORT || 8080;
 const CONNECTION_URL = 'mongodb+srv://akhil:freerunning2@cluster0.prahn.mongodb.net/?retryWrites=true&w=majority';
