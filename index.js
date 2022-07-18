@@ -7,7 +7,7 @@ import todoRoutes from "./views/routes.js";
 const app = express();
 
 app.use(cors({
-	origin:"https://mytodo-frontend.netlify.app/",
+	origin:"https://mytodo-app-frontend.herokuapp.com/",
 	credentials:true
 }));
 
