@@ -6,7 +6,10 @@ import todoRoutes from "./views/routes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+	origin:"https://mytodo-frontend.netlify.app/",
+	credentials:true
+}));
 
 const port = process.env.PORT || 8080;
 const CONNECTION_URL = 'mongodb+srv://akhil:freerunning2@cluster0.prahn.mongodb.net/?retryWrites=true&w=majority';
